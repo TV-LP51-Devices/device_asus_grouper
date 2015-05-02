@@ -42,6 +42,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 endif
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
+# Disable journaling on system.img to save space.
+BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 6567231488
 BOARD_FLASH_BLOCK_SIZE := 4096
 
@@ -71,6 +73,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/asus/grouper/egl.cfg
 
+# Hardware tunables
+BOARD_HARDWARE_CLASS := device/asus/grouper/cmhw/
+
 ifneq ($(HAVE_NVIDIA_PROP_SRC),false)
 # needed for source compilation of nvidia libraries
 -include vendor/nvidia/proprietary_src/build/definitions.mk
@@ -81,10 +86,6 @@ endif
 NEED_WORKAROUND_CORTEX_A9_745320 := true
 
 BOARD_USES_GROUPER_MODULES := true
-
-# Required for CWM
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_RECOVERY_SWIPE := true
 
 TARGET_KERNEL_SOURCE := kernel/asus/grouper
 TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
@@ -114,4 +115,5 @@ BOARD_SEPOLICY_UNION += \
         system_app.te \
         system_server.te \
         ueventd.te \
-        vold.te
+        vold.te \
+        radio.te
