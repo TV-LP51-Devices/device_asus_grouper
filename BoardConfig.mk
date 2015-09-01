@@ -42,8 +42,12 @@ TARGET_RECOVERY_FSTAB = device/asus/grouper/fstab.grouper
 
 MALLOC_IMPL := dlmalloc
 
+# ROM toolchain
+TARGET_GCC_VERSION_EXP := 4.9
+
 # Custom Kernel Toolchain
-TARGET_GCC_VERSION_ARM := 4.9-linaro
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9/bin
 
 # Graphite optimizations
 SYMMETRY := true
