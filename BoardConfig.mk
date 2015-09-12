@@ -43,7 +43,7 @@ TARGET_RECOVERY_FSTAB = device/asus/grouper/fstab.grouper
 MALLOC_IMPL := dlmalloc
 
 # ROM toolchain
-TARGET_GCC_VERSION_EXP := 4.9
+TARGET_GCC_VERSION_EXP := 4.8
 
 # Custom Kernel Toolchain
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
