@@ -6,7 +6,7 @@ TARGET_SCREEN_WIDTH := 800
 PRODUCT_RELEASE_NAME := Nexus7
 
 # Inherit some common Validus stuff.
-$(call inherit-product, vendor/validus/config/common_tablet.mk)
+$(call inherit-product, vendor/validus/config/common_full_tablet_wifionly.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/validus/configs/nfc_enhanced.mk)
