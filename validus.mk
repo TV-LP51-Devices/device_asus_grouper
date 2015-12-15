@@ -9,7 +9,7 @@ PRODUCT_RELEASE_NAME := Nexus7
 $(call inherit-product, vendor/validus/config/common_full_tablet_wifionly.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/validus/configs/nfc_enhanced.mk)
+$(call inherit-product, vendor/validus/config/nfc_enhanced.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/asus/grouper/full_grouper.mk)
